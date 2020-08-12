@@ -88,7 +88,6 @@ class Cell:
         self.dl_earfcn = dl_earfcn
         self.ul_earfcn = ul_earfcn
         self.n_prbs = n_prbs
-        self.ue_measurements = {}
         self.mac_prb_utilization = {}
 
     def to_str(self):
@@ -126,6 +125,5 @@ class Cell:
         out['ul_earfcn'] = self.ul_earfcn
         out['n_prbs'] = self.n_prbs
         out['mac_prb_utilization'] = self.mac_prb_utilization
-        out['ue_measurements'] = self.ue_measurements
 
         return out

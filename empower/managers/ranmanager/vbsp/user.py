@@ -17,10 +17,7 @@
 
 """User Equipment."""
 
-from stdnum import numdb
-
 from empower_core.serialize import serializable_dict
-from empower_core.plmnid import PLMNID
 
 USER_STATUS_CONNECTED = 1
 USER_STATUS_DISCONNECTED = 2
@@ -48,6 +45,7 @@ class User():
         self.rnti = rnti
         self.status = status
         self.cell = cell
+        self.ue_measurements = {}
 
     @property
     def plmnid(self):
@@ -71,6 +69,7 @@ class User():
         out['cell'] = self.cell
         out['plmnid'] = self.plmnid
         out['status'] = USER_STATUS[self.status]
+        out['ue_measurements'] = self.ue_measurements
         return out
 
     def to_str(self):
